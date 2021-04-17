@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/0cc3d8b950.js" crossorigin="anonymous"></script>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style>
+    body{
+        height: 100vh;
+        width: 100%;
+        transition: 3s ease;
+        box-sizing: border-box;
+    }
+    .light-theme{
+        color: black;
+        transition: 3s;
+        background-color: #F1F3F4;
+    }
+    .dark-theme {
+      width: 100%;
+        transition: 3s;
+      background-color: #283142;
+      color: white;
+    }
+    #comment{
+        color: #f06292;
+    }
+    #toggle{
+        float: right;
+    }
+
+    </style>
+<body>
+
+    
+
+
+    <div class="container">
+
+        <div class="row" style="position: relative;height: 45%;">
+
+            <div class="col s2 m12 " style="border-radius: 20px;">
+                <div class="card h-100" style="height: 95vh;background-color: #EAE7AF;">
+                  <div class="card-content" style="position: relative;top: 40%;">
+
+                    <div class="row">
+                          <div class="col s12 m12 l6 p-2 flex-fill bd-highlight" style="position: relative;left: 25%;">
+
+                            <div>
+                              <h5 class="center-align">Dev Ngecu</h5>
+                            </div>
+
+                            <div class="card" id="card-theme" style="border-radius:30px">
+                              <div class="card-content">
+                                <span class="card-title"> <i onclick="myFunction()" id="toggle" class="fas fa-toggle-on"></i></span>
+                                <p id="comment"># Requires the latest pip</p>
+                                <p>$ pip3 install --upgrade pip3</p>
+                                <p id="comment"># Current stable release for CPU and GPU</p>
+                                <p>$ pip3 install django</p>
+                                <p>$ import django</p>
+                              </div>
+                         
+                            </div>
+                            <span id="currentTheme"></span>
+                          </div>
+
+                    </div>
+                  
+                  </div>
+            
+                </div>
+              </div>
+
+              </div>
+          </div>
+    
+    </div>
+
+
+
+        
+</body>
+<script>
+
+ const element=document.getElementById('card-theme');
+    function myFunction() {
+       
+
+    if (element.classList.contains("dark-theme")) {
+      element.classList.remove("dark-theme");
+      element.classList.add("light-theme");
+      localStorage.setItem("theme", "light-theme");
+
+}
+else{
+  element.classList.remove("light-theme");
+  element.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark-theme");
+
+
+}
+document.getElementById("currentTheme").innerHTML= localStorage.theme;
+
+}
+
+element.classList.add(localStorage.getItem("theme"));
+document.getElementById("currentTheme").innerHTML= localStorage.theme;
+
+
+</script>
+</script>
+</html>
